@@ -50,8 +50,9 @@ echo $id = $_GET['id'];
                                                 <input type="file" name="user_image" class="form-control" required>
                                                 <input type="hidden" name="user_image_old" value="<?php echo $row['user_image']?>"">
                                             </div>
+                                            <img src="<?php echo "uploads/".$row['user_image'];?>" width="100px">
                                             <div class="form-group">
-                                                <button type="submit" name="btn-submit" class="btn btn-primary">UPDATE</button>
+                                                <button type="submit" name="update_user_image" class="btn btn-primary">UPDATE</button>
                                             </div>
                                         </form>   
                                         <?php

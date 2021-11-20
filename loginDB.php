@@ -40,4 +40,47 @@ if(!$conn){
     }
 }
 
+if(isset($_POST['update_user_image'])){
+    $id = $_POST['user_id'];
+    $name = $_POST['user_name'];
+    $email = $_POST['user_email'];
+    $password = $_POST['user_password'];
+    $new_image = $_FILES['user_image']['name'];
+    $old_image = $_POST['user_image_old'];
+
+    if($new_image != ''){
+        $update_filename = $_FILES['user_image']['name'];
+    }else{
+        $update_filename = $old_image;
+    }
+    if($_FILES['user_image']['name']){
+        if(file_exists("uploads/".$_FILES["user_image"]["name"])){
+            $filename = $_FILES["user_image"]["name"];
+            $_SESSION['status'] = "Image Already Exists! ".$filename;
+            header('Location: home.php');
+        }    
+    }else{
+        $query = "UPDATE register SET user_name='$name', user_email='$email', user_password='$password', user_image='$update_filename' WHERE user_id ='$id'";
+        $query_run = mysqli_query($conn, $query);
+
+        if($query_run){
+            if($_FILES['user_image']['name'] != ''){
+                move_uploaded_file($_FILES["user_image"]["tmp_name"], "uploads/".$_FILES['user_image']['name']);
+                unlink("uploads/".$old_image);
+            }
+            $_SESSION['status'] = "Data Updated Successfully!";
+            header('Location: home.php');
+        }else{
+            $_SESSION['status'] = "Data Update Not Successfully!";
+            header('Location: home.php');
+        }
+    }
+}
+
+
+
+
+
+
+
 ?>

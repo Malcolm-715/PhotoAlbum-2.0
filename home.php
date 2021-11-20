@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,6 +21,17 @@
                             <h4 class="text-white">DISPLAY IMAGES</h4>
                       </div>
                       <div class="card-body">
+                            <?php
+                                if(isset($_SESSION['status']) && $_SESSION != ''){
+                                    ?>
+                                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                            <strong>YO!</strong> <?php echo $_SESSION['status'];?>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    <?php
+                                    unset($_SESSION['status']);
+                                }
+                            ?>
                             <?php
                                 $conn = mysqli_connect('localhost', 'root','');
                                 mysqli_select_db($conn, 'album_photo');
