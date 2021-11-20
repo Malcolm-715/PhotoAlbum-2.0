@@ -14,10 +14,10 @@ if(isset($_POST['btn-submit'])){
     if($query_run){
         move_uploaded_file($_FILES["user_image"]["tmp_name"], "uploads/".$_FILES["user_image"]["name"]);
         $_SESSION['status'] = "Image Successfully Uploaded!";
-        header('Location: login.html');
+        header('Location: login.php');
     }else{
         $_SESSION['status'] = "Image Not Uploaded!";
-        header('Location: login.html');
+        header('Location: login.php');
     }
 }
 

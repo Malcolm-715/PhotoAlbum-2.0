@@ -1,4 +1,5 @@
 <?php session_start();?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,7 +20,7 @@
                           <h4>WELCOME TO PHOTOALBUMPRO</h4>
                       </div>
                       <div class="card-body">
-                          <?php
+                           <?php
                             if(isset($_SESSION['status']) && $_SESSION != ''){
                                 ?>
                                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
