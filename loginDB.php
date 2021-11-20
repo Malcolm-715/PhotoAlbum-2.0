@@ -1,6 +1,11 @@
 <?php
 session_start();
-$conn = mysqli_connect("localhost","root","","album_photo");
+$conn = mysqli_connect('localhost', 'root','');
+mysqli_select_db($conn,'album_photo');
+if(!$conn){
+    echo "Connection failed!";
+    exit();
+}
 
 if(isset($_POST['btn-submit'])){
     $name = $_POST['user_name'];
@@ -8,7 +13,7 @@ if(isset($_POST['btn-submit'])){
     $password = $_POST['user_password'];
     $image = $_FILES['user_image']['name'];
 
-    $query = "INSERT INTO login(user_name, user_email, user_password, user_image) VALUES($name, $email, $password, $image)";
+    $query = "INSERT INTO register(user_name, user_email, user_password, user_image) VALUES('$name',' $email',' $password',' $image')";
     $query_run = mysqli_query($conn, $query);
 
     if($query_run){
