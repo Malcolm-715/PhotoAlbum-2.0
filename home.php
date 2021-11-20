@@ -56,17 +56,22 @@
                                             foreach($query_run as $row){
                                                 ?>
                                                     <tr>
-                                                        <td><?php echo $row['user_id']?></td>
-                                                        <td><?php echo $row['user_name']?></td>
-                                                        <td><?php echo $row['user_email']?></td>
+                                                        <td><?php echo $row['user_id'];?></td>
+                                                        <td><?php echo $row['user_name'];?></td>
+                                                        <td><?php echo $row['user_email'];?></td>
                                                         <td>
-                                                            <img src="<?php echo "uploads/".$row['user_image']?>" width="100px" alt="image">
+                                                            <img src="<?php echo "uploads/".$row['user_image'];?>" width="100px" alt="Image">
                                                         </td>
                                                         <td>
-                                                            <a href="edit.php?id=<?php echo $row['user_id']?>" class="btn btn-info">EDIT</a>
+                                                            <a href="edit.php?id=<?php echo $row['user_id'];?>" class="btn btn-info">EDIT</a>
                                                         </td>
                                                         <td>
-                                                            <a href="" class="btn btn-danger">DELETE</a>
+                                                            <!-- <a href="" class="btn btn-danger">DELETE</a> -->
+                                                            <form action="home.php" method="POST">
+                                                                <input type="hidden" name="delete_id" value="<?php echo $row['user_id'];?>">
+                                                                <input type="hidden" name="delete_image" value="<?php echo $row['user_image'];?>">
+                                                                <button type="submit" name="delete_user_image" class="btn btn-danger">DELETE</button>
+                                                            </form>
                                                         </td>
                                                     </tr>
                                                 <?php

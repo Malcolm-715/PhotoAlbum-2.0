@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $conn = mysqli_connect('localhost', 'root','');
 mysqli_select_db($conn,'album_photo');
 if(!$conn){
@@ -77,7 +78,22 @@ if(isset($_POST['update_user_image'])){
     }
 }
 
+if(isset($_POST['delete_user_image'])){
+    $id = $_POST['delete_id'];
+    $user_image = $_POST['delete_image'];
 
+    $query = "DELETE FROM register WHERE user_id='$id'";
+    $query_run = mysqli_query($conn, $query);
+
+    if($query_run){
+        unlink("uploads/".$user_image);
+        $_SESSION['status'] = "Data Deleted Successfully!";
+        header('Location: home.php');
+    }else{
+        $_SESSION['status'] = "Data Not Deleted!";
+        header('Location: home.php');  
+    }
+}
 
 
 
