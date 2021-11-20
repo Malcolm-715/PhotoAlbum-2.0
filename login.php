@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,7 +19,18 @@
                           <h4>WELCOME TO PHOTOALBUMPRO</h4>
                       </div>
                       <div class="card-body">
-                          <form action="home.php" method="post" enctype="multipart/form-data">
+                          <?php
+                            if(isset($_SESSION['status']) && $_SESSION != ''){
+                                ?>
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <strong>YO!</strong> <?php echo $_SESSION['status'];?>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                <?php
+                                unset($_SESSION['status']);
+                            }
+                          ?>
+                          <form action="loginDB.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="">Full Name</label>
                                     <input type="text" name="user_name" class="form-control" placeholder="Enter Name" required>
@@ -36,7 +48,7 @@
                                     <input type="file" name="user_image" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <button name="btn-submit" class="btn btn-primary">SUBMIT- UPLOAD</button>
+                                    <button type="submit" name="btn-submit" class="btn btn-primary">SUBMIT- UPLOAD</button>
                                 </div>
                           </form>
                       </div>
