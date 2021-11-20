@@ -50,7 +50,7 @@
                                                             <img src="<?php echo "uploads/".$row['user_image']?>" width="100px" alt="image">
                                                         </td>
                                                         <td>
-                                                            <a href="" class="btn btn-info">EDIT</a>
+                                                            <a href="edit.php?id=<?php echo $row['user_id']?>" class="btn btn-info">EDIT</a>
                                                         </td>
                                                         <td>
                                                             <a href="" class="btn btn-danger">DELETE</a>
