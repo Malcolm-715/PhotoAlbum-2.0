@@ -58,7 +58,7 @@ if(isset($_POST['update_user_image'])){
         if(file_exists("uploads/".$_FILES["user_image"]["name"])){
             $filename = $_FILES["user_image"]["name"];
             $_SESSION['status'] = "Image Already Exists! ".$filename;
-            header('Location: home.php');
+            header('Location: index.php');
         }    
     }else{
         $query = "UPDATE register SET user_name='$name', user_email='$email', user_password='$password', user_image='$update_filename' WHERE user_id ='$id'";
@@ -70,10 +70,10 @@ if(isset($_POST['update_user_image'])){
                 unlink("uploads/".$old_image);
             }
             $_SESSION['status'] = "Data Updated Successfully!";
-            header('Location: home.php');
+            header('Location: index.php');
         }else{
             $_SESSION['status'] = "Data Update Not Successfully!";
-            header('Location: home.php');
+            header('Location: index.php');
         }
     }
 }
@@ -88,10 +88,10 @@ if(isset($_POST['delete_user_image'])){
     if($query_run){
         unlink("uploads/".$user_image);
         $_SESSION['status'] = "Data Deleted Successfully!";
-        header('Location: home.php');
+        header('Location: index.php');
     }else{
         $_SESSION['status'] = "Data Not Deleted!";
-        header('Location: home.php');  
+        header('Location: index.php');  
     }
 }
 

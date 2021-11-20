@@ -67,7 +67,7 @@
                                                         </td>
                                                         <td>
                                                             <!-- <a href="" class="btn btn-danger">DELETE</a> -->
-                                                            <form action="home.php" method="POST">
+                                                            <form action="index.php" method="POST">
                                                                 <input type="hidden" name="delete_id" value="<?php echo $row['user_id'];?>">
                                                                 <input type="hidden" name="delete_image" value="<?php echo $row['user_image'];?>">
                                                                 <button type="submit" name="delete_user_image" class="btn btn-danger">DELETE</button>
