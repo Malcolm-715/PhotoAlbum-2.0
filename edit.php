@@ -22,7 +22,7 @@ echo $id = $_GET['id'];
                           <h4>EDIT Images & Data</h4>
                       </div>
                       <div class="card-body">
-                        <?php
+                            <?php
                                 $conn = mysqli_connect('localhost', 'root','');
                                 mysqli_select_db($conn, 'album_photo');
                                 $id = $_GET['id'];
@@ -32,29 +32,29 @@ echo $id = $_GET['id'];
                                 if(mysqli_num_rows($query_run) > 0){
                                     foreach($query_run as $row){
                                         ?>
-                                        <form action="index.php" method="post" enctype="multipart/form-data">
-                                            <div class="form-group">
-                                                <label for="">Full Name</label>
-                                                <input type="text" name="user_name" value="<?php echo $row['user_name']?>" class="form-control" placeholder="Enter Name" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="">Email</label>
-                                                <input type="text" name="user_email" value="<?php echo $row['user_email']?>" class="form-control" placeholder="Email" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="">Password</label>
-                                                <input type="password" name="user_password" value="<?php echo $row['user_password']?>" class="form-control" placeholder="Password" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="">Image</label>
-                                                <input type="file" name="user_image" class="form-control" required>
-                                                <input type="hidden" name="user_image_old" value="<?php echo $row['user_image']?>"">
-                                            </div>
-                                            <img src="<?php echo "uploads/".$row['user_image'];?>" width="100px">
-                                            <div class="form-group">
-                                                <button type="submit" name="update_user_image" class="btn btn-primary">UPDATE</button>
-                                            </div>
-                                        </form>   
+                                            <form action="edit.php" method="post" enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                    <label for="">Full Name</label>
+                                                    <input type="text" name="user_name" value="<?php echo $row['user_name']?>" class="form-control" placeholder="Enter Name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">Email</label>
+                                                    <input type="text" name="user_email" value="<?php echo $row['user_email']?>" class="form-control" placeholder="Email" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">Password</label>
+                                                    <input type="password" name="user_password" value="<?php echo $row['user_password']?>" class="form-control" placeholder="Password" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">Image</label>
+                                                    <input type="file" name="user_image" class="form-control" required>
+                                                    <input type="hidden" name="user_image_old" value="<?php echo $row['user_image']?>"">
+                                                </div>
+                                                <img src="<?php echo "uploads/".$row['user_image'];?>" width="100px">
+                                                <div class="form-group">
+                                                    <button type="submit" name="update_user_image" class="btn btn-primary">UPDATE</button>
+                                                </div>
+                                            </form>   
                                         <?php
                                         }
                                 }else{
