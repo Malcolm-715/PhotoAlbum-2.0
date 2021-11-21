@@ -42,7 +42,7 @@ if(!$conn){
 }
 
 if(isset($_POST['update_user_image'])){
-    $id = $_POST['user_id'];
+    // $id = $_POST['user_id'];
     $name = $_POST['user_name'];
     $email = $_POST['user_email'];
     $password = $_POST['user_password'];

@@ -32,7 +32,7 @@ echo $id = $_GET['id'];
                                 if(mysqli_num_rows($query_run) > 0){
                                     foreach($query_run as $row){
                                         ?>
-                                        <form action="loginDB.php" method="post" enctype="multipart/form-data">
+                                        <form action="index.php" method="post" enctype="multipart/form-data">
                                             <div class="form-group">
                                                 <label for="">Full Name</label>
                                                 <input type="text" name="user_name" value="<?php echo $row['user_name']?>" class="form-control" placeholder="Enter Name" required>

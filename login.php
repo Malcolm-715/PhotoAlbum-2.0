@@ -52,6 +52,7 @@
                                 <div class="form-group">
                                     <button type="submit" name="btn-submit" class="btn btn-primary">SUBMIT- UPLOAD</button>
                                 </div>
+                                <a href="index.php">PROCEED</a>
                           </form>
                       </div>
                   </div>

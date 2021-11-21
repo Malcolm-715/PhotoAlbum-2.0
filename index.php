@@ -44,8 +44,8 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>USER NAME</th>
-                                        <th>EMAIL</th>
                                         <th>IMAGE</th>
+                                        <th>EMAIL</th>
                                         <th>EDIT</th>
                                         <th>DELETE</th>
                                     </tr>        
@@ -58,10 +58,11 @@
                                                     <tr>
                                                         <td><?php echo $row['user_id'];?></td>
                                                         <td><?php echo $row['user_name'];?></td>
-                                                        <td><?php echo $row['user_email'];?></td>
                                                         <td>
-                                                            <img src="<?php echo "uploads/".$row['user_image'];?>" width="100px" alt="Image">
+                                                            <img src="<?php echo "uploads/".$row['user_image'];?>" width="430px" alt="Image">
                                                         </td>
+                                                        <td><?php echo $row['user_email'];?></td>
+                                                        
                                                         <td>
                                                             <a href="edit.php?id=<?php echo $row['user_id'];?>" class="btn btn-info">EDIT</a>
                                                         </td>
