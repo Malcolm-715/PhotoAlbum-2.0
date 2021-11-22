@@ -1,4 +1,7 @@
-<?php session_start();?>
+<?php 
+include('loginDB.php'); 
+session_start();
+?>
 
 <!doctype html>
 <html lang="en">
@@ -33,8 +36,8 @@
                                 }
                             ?>
                             <?php
-                                $conn = mysqli_connect('localhost', 'root','');
-                                mysqli_select_db($conn, 'album_photo');
+                                // $conn = mysqli_connect('localhost', 'root','');
+                                // mysqli_select_db($conn, 'album_photo');
                                 $query = "select user_id, user_name, user_email, user_image from register ";
                                 $query_run = mysqli_query($conn, $query);
 

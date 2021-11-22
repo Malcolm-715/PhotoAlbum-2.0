@@ -1,4 +1,5 @@
 <?php
+include('loginDB.php');
 echo $id = $_GET['id'];
 ?>
 
@@ -23,8 +24,8 @@ echo $id = $_GET['id'];
                       </div>
                       <div class="card-body">
                             <?php
-                                $conn = mysqli_connect('localhost', 'root','');
-                                mysqli_select_db($conn, 'album_photo');
+                                // $conn = mysqli_connect('localhost', 'root','');
+                                // mysqli_select_db($conn, 'album_photo');
                                 $id = $_GET['id'];
                                 $query = "select * from register where user_id = '$id'";
                                 $query_run = mysqli_query($conn, $query);
