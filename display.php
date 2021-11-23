@@ -1,6 +1,5 @@
 <?php 
-$conn = mysqli_connect('localhost', 'root','');
-mysqli_select_db($conn,'album_photo');
+include('loginDB.php');
 ;?>
 <!DOCTYPE html>
 <html>

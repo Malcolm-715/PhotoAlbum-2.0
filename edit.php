@@ -1,15 +1,15 @@
 <?php
-// //Get Heroku ClearDB connection information
-// $cleardb_url = 'mysql://bdf84a0fd9249c:d392f6cf@eu-cdbr-west-01.cleardb.com/heroku_f2ccda8ea4368a8';
-// $cleardb_server = 'eu-cdbr-west-01.cleardb.co';
-// $cleardb_username = 'bdf84a0fd9249c';
-// $cleardb_password = 'd392f6cf';
-// $cleardb_db = 'heroku_f2ccda8ea4368a8';
-// $active_group = 'default';
-// $query_builder = TRUE;
-// // Connect to DB
-// $conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password);
-// mysqli_select_db($conn,$cleardb_db);
+//Get Heroku ClearDB connection information
+$cleardb_url = 'mysql://bdf84a0fd9249c:d392f6cf@eu-cdbr-west-01.cleardb.com/heroku_f2ccda8ea4368a8';
+$cleardb_server = 'eu-cdbr-west-01.cleardb.co';
+$cleardb_username = 'bdf84a0fd9249c';
+$cleardb_password = 'd392f6cf';
+$cleardb_db = 'heroku_f2ccda8ea4368a8';
+$active_group = 'default';
+$query_builder = TRUE;
+// Connect to DB
+$conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password);
+mysqli_select_db($conn,$cleardb_db);
 echo $id = $_GET['id'];
 ?>
 
@@ -34,8 +34,8 @@ echo $id = $_GET['id'];
                       </div>
                       <div class="card-body">
                             <?php
-                                $conn = mysqli_connect('localhost', 'root','');
-                                mysqli_select_db($conn, 'album_photo');
+                                // $conn = mysqli_connect('localhost', 'root','');
+                                // mysqli_select_db($conn, 'album_photo');
                                 $id = $_GET['id'];
                                 $query = "select * from register where user_id = '$id'";
                                 $query_run = mysqli_query($conn, $query);
@@ -73,6 +73,7 @@ echo $id = $_GET['id'];
                                 }
                             ?>
                       </div>
+                      <a href="index.php" class="btn btn-warning">BACK</a> 
                   </div>
               </div>
           </div>
