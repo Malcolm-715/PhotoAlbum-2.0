@@ -1,15 +1,4 @@
-<?php 
-//Get Heroku ClearDB connection information
-$cleardb_url = 'mysql://bdf84a0fd9249c:d392f6cf@eu-cdbr-west-01.cleardb.com/heroku_f2ccda8ea4368a8';
-$cleardb_server = 'eu-cdbr-west-01.cleardb.co';
-$cleardb_username = 'bdf84a0fd9249c';
-$cleardb_password = 'd392f6cf';
-$cleardb_db = 'heroku_f2ccda8ea4368a8';
-$active_group = 'default';
-$query_builder = TRUE;
-// Connect to DB
-$conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password);
-mysqli_select_db($conn,$cleardb_db); 
+<?php  
 session_start();
 ?>
 
@@ -46,8 +35,18 @@ session_start();
                                 }
                             ?>
                             <?php
-                                $conn = mysqli_connect('localhost', 'root','');
-                                mysqli_select_db($conn, 'album_photo');
+                                $cleardb_url = 'mysql://bdf84a0fd9249c:d392f6cf@eu-cdbr-west-01.cleardb.com/heroku_f2ccda8ea4368a8';
+                                $cleardb_server = 'eu-cdbr-west-01.cleardb.co';
+                                $cleardb_username = 'bdf84a0fd9249c';
+                                $cleardb_password = 'd392f6cf';
+                                $cleardb_db = 'heroku_f2ccda8ea4368a8';
+                                $active_group = 'default';
+                                $query_builder = TRUE;
+                                // Connect to DB
+                                $conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password);
+                                mysqli_select_db($conn,$cleardb_db);
+                                // $conn = mysqli_connect('localhost', 'root','');
+                                // mysqli_select_db($conn, 'album_photo');
                                 $query = "select user_id, user_name, user_email, user_image from register ";
                                 $query_run = mysqli_query($conn, $query);
 
