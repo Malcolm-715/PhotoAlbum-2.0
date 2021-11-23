@@ -1,0 +1,21 @@
+body{
+    display: grid;
+    justify-content:start;
+    align-items:flex-start;
+    flex-direction: grip;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+.alb{
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+}
+.alb img{
+    width: 200px;
+    height: 200px;
+}
+.a{
+    font-style: bold;
+    font-size: small;
+}
